@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформа петицій</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #e5c99f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #4a3b38;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Roboto Mono', monospace;
+        }
+        header img {
+            height: 70px;
+        }
+        header h1 {
+            color: #fcba03;
+            font-weight: 400;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        main {
+            padding: 40px 60px;
+            flex-grow: 1;
+        }
+
+        /* Форма пошуку */
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .search-container input {
+            background-color: #d6d9dc;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 25px;
+            font-size: 20px;
+            width: 55%;
+        }
+        .search-container button {
+            background-color: #4a86e8;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Заголовки розділів */
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        /* Списки (Категорії) */
+        ul.categories {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        ul.categories li {
+            background-color: #d6d9dc;
+            padding: 10px 45px;
+            border-radius: 25px;
+            font-size: 24px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #d6d9dc;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 12px 15px;
+            font-size: 24px;
+        }
+        th {
+            font-weight: 400;
+        }
+        .col-id { text-align: center; width: 10%; }
+        .col-name { text-align: left; width: 60%; }
+        .col-votes { text-align: center; width: 30%; }
+
+        footer {
+            background-color: #4a3b38;
+            padding: 30px 40px;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .footer-content {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-label {
+            color: #fcba03;
+            font-size: 18px;
+        }
+        footer a {
+            color: #5d86d6;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Книга.svg" alt="Книга">
+        <h1>Платформа петицій</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" placeholder="Пошук">
+            <button type="submit">&#10140;</button>
+        </div>
+
+        <h2>Найпопулярніші категорії</h2>
+        <ul class="categories">
+            <li>Екологія</li>
+            <li>Транспорт</li>
+            <li>Освіта</li>
+        </ul>
+
+        <h2>Перелік петицій</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-id">№</th>
+                    <th class="col-name">Назви</th>
+                    <th class="col-votes">Голоси</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-id">1</td>
+                    <td class="col-name">Ремонт доріг</td>
+                    <td class="col-votes">1200</td>
+                </tr>
+                <tr>
+                    <td class="col-id">2</td>
+                    <td class="col-name">Нові автобуси</td>
+                    <td class="col-votes">850</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span class="footer-label">Корисні посилання:</span>
+            <a href="about.html">Читати опис предметного середовища та бізнес-логіки</a>
+        </div>
+    </footer>
+
+</body>
+</html>
