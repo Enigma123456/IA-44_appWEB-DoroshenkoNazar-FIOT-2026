@@ -6,6 +6,9 @@
     <title>Платформа петицій</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box; /* Універсальний селектор */
+        }
         body {
             margin: 0;
             font-family: 'Roboto Mono', monospace;
@@ -45,7 +48,7 @@
             gap: 15px;
             margin-bottom: 40px;
         }
-        .search-container input {
+        input[type="text"] {
             background-color: #d6d9dc;
             border: none;
             border-radius: 25px;
@@ -129,13 +132,38 @@
             text-decoration: none;
             font-size: 18px;
         }
+        #main-title {
+            text-shadow: 2px 2px 4px rgba(4,4,4,4);
+        }
+        /* Дочірній селектор (стилізує тільки ті img, які є прямими нащадками header) */
+        header > img {
+            border-radius: 10px; 
+        }
+        /* Сусідній селектор (стилізує таблицю, яка йде рівно після h2) */
+        h2 + table {
+            margin-top: 10px;
+        }
+        /* Використання контуру (outline) при кліку на поле вводу */
+        input[type="text"]:focus {
+            outline: 3px solid #4a3b38;
+        }
+        ul.sub-categories {
+            list-style-type: circle;
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        ul.sub-categories li {
+            background-color: transparent;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="Книга.svg" alt="Книга">
-        <h1>Платформа петицій</h1>
+        <h1 id="main-title">Платформа петицій</h1>
     </header>
 
     <main>
@@ -146,9 +174,24 @@
 
         <h2>Найпопулярніші категорії</h2>
         <ul class="categories">
-            <li>Екологія</li>
-            <li>Транспорт</li>
-            <li>Освіта</li>
+            <li>Екологія
+                <ul class="sub-categories">
+                    <li>Парки</li>
+                    <li>Водойми</li>
+                </ul>
+            </li>
+            <li>Транспорт
+                <ul class="sub-categories">
+                    <li>Метро</li>
+                    <li>Трамваї</li>
+                </ul>
+            </li>
+            <li>Освіта
+                <ul class="sub-categories">
+                    <li>Школи</li>
+                    <li>Університети</li>
+                </ul>
+            </li>
         </ul>
 
         <h2>Перелік петицій</h2>
