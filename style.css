@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #e5c99f;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- ШАПКА (HEADER) --- */
+header {
+    background-color: #4a3b38;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between; /* Розносить ліву і праву частини по краях */
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left img {
+    height: 70px;
+    border-radius: 10px;
+}
+
+.header-left h1 {
+    color: #fcba03;
+    font-weight: 400;
+    margin: 0;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(4,4,4,4);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.auth-btn {
+    background-color: #fcba03;
+    color: #4a3b38;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #d99f02;
+}
+
+/* --- БУРГЕР МЕНЮ --- */
+.burger-menu {
+    position: relative;
+}
+
+#burger-toggle {
+    display: none; /* Ховаємо системний чекбокс */
+}
+
+.burger-icon {
+    font-size: 30px;
+    color: #fcba03;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: none; /* За замовчуванням меню сховане */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #d6d9dc;
+    list-style: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Відкриття меню при натисканні на чекбокс */
+#burger-toggle:checked ~ .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #4a3b38;
+    font-size: 16px;
+}
+
+.menu-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- ОСНОВНИЙ КОНТЕНТ (MAIN) --- */
+main {
+    padding: 40px 60px;
+    flex-grow: 1;
+}
+
+.main-layout {
+    display: flex;
+    gap: 40px; /* Відстань між лівою колонкою та сайдбаром */
+}
+
+.left-column {
+    flex: 7; /* Займає 70% доступного простору */
+}
+
+.right-column {
+    flex: 3; /* Займає 30% доступного простору */
+}
+
+/* --- ПОШУК ТА ТАБЛИЦЯ --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+input[type="text"] {
+    background-color: #d6d9dc;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 25px;
+    font-size: 20px;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    outline: 3px solid #4a3b38;
+}
+
+.search-container button {
+    background-color: #4a86e8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+ul.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+ul.categories li {
+    background-color: #d6d9dc;
+    padding: 10px 45px;
+    border-radius: 25px;
+    font-size: 24px;
+}
+
+ul.sub-categories {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+ul.sub-categories li {
+    background-color: transparent;
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #d6d9dc;
+    border: 2px solid black;
+}
+
+h2 + table {
+    margin-top: 10px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 12px 15px;
+    font-size: 24px;
+}
+
+th { font-weight: 400; }
+.col-id { text-align: center; width: 10%; }
+.col-name { text-align: left; width: 60%; }
+.col-votes { text-align: center; width: 30%; }
+
+/* --- ПРАВА КОЛОНКА (САЙДБАР) --- */
+.sidebar {
+    background-color: #f7ebd5;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #4a3b38;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #4a3b38;
+    border-bottom: 2px solid #fcba03;
+    padding-bottom: 10px;
+}
+
+.response-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.response-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #4a86e8;
+}
+
+.votes-count {
+    font-size: 14px;
+    color: #d99f02;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.response-text {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.date {
+    font-size: 12px;
+    color: gray;
+}
+
+/* --- ПІДВАЛ (FOOTER) --- */
+footer {
+    background-color: #4a3b38;
+    padding: 30px 40px;
+    margin-top: 10px;
+}
+
+.footer-content {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-label {
+    color: #fcba03;
+    font-size: 18px;
+}
+
+footer a {
+    color: #5d86d6;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* --- АДАПТИВНІСТЬ (МЕДІА-ЗАПИТИ) --- */
+@media (max-width: 992px) {
+    /* Для планшетів */
+    .main-layout {
+        flex-direction: column; /* Сайдбар падає вниз */
+    }
+    .right-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Для мобільних телефонів */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    main {
+        padding: 20px;
+    }
+    ul.categories {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    .col-id, .col-name, .col-votes {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.response-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.response-card:hover {
+    transform: translateY(-5px); /* Картка трохи піднімається */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* З'являється тінь */
+}
